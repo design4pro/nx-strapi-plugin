@@ -31,7 +31,8 @@
     "@angular-devkit/architect": "0.1100.5",
     "@angular-devkit/core": "11.0.5",
     "rxjs": "6.6.3",
-    "strapi": "3.4.1"
+    "strapi": "3.4.1",
+    "strapi-generate-new": "3.4.1"
   },
   "publishConfig": {
     "access": "public"
