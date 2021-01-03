@@ -1,0 +1,79 @@
+{
+  "version": 2,
+  "projects": {
+    "nx-strapi-plugin": {
+      "root": "packages/nx-strapi-plugin",
+      "sourceRoot": "packages/nx-strapi-plugin/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "packages/nx-strapi-plugin/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/packages/nx-strapi-plugin"
+          ],
+          "options": {
+            "jestConfig": "packages/nx-strapi-plugin/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/packages/nx-strapi-plugin",
+            "tsConfig": "packages/nx-strapi-plugin/tsconfig.lib.json",
+            "packageJson": "packages/nx-strapi-plugin/package.json",
+            "main": "packages/nx-strapi-plugin/src/index.ts",
+            "assets": [
+              "packages/nx-strapi-plugin/*.md",
+              {
+                "input": "./packages/nx-strapi-plugin/src",
+                "glob": "**/*.!(ts)",
+                "output": "./src"
+              },
+              {
+                "input": "./packages/nx-strapi-plugin",
+                "glob": "generators.json",
+                "output": "."
+              },
+              {
+                "input": "./packages/nx-strapi-plugin",
+                "glob": "executors.json",
+                "output": "."
+              }
+            ]
+          }
+        }
+      }
+    },
+    "nx-strapi-plugin-e2e": {
+      "projectType": "application",
+      "root": "e2e/nx-strapi-plugin-e2e",
+      "sourceRoot": "e2e/nx-strapi-plugin-e2e/src",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/nx-plugin:e2e",
+          "options": {
+            "target": "nx-strapi-plugin:build",
+            "npmPackageName": "@design4pro/nx-strapi-plugin",
+            "pluginOutputPath": "dist/packages/nx-strapi-plugin",
+            "jestConfig": "e2e/nx-strapi-plugin-e2e/jest.config.js"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/workspace"
+  }
+}

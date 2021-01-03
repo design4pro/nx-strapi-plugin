@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "nx-strapi-plugin",
+  "version": "0.0.1",
+  "generators": {
+    "nx-strapi-plugin": {
+      "factory": "./src/generators/nx-strapi-plugin/generator",
+      "schema": "./src/generators/nx-strapi-plugin/schema.json",
+      "description": "nx-strapi-plugin generator"
+    }
+  }
+}
