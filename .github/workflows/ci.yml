@@ -1,0 +1,51 @@
+name: CI
+
+on:
+    pull_request:
+        branches:
+            - main
+    push:
+        branches:
+            - main
+            - develop
+
+jobs:
+    test:
+        name: ${{ format('Run Test Node.js {0}', matrix.node) }}
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node: ['12', '11', '10', '8']
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v1
+
+            - name: Set Node.js
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node }}
+
+            - name: Test
+              run: |
+                  npm install
+                  npm run test
+    release:
+        name: Semantic Release
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v1
+
+            - name: Set Node.js 12
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 12
+
+            - name: Release
+              if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+              run: |
+                  npm install
+                  npm run release
+              env:
+                  GH_TOKEN: ${{secrets.GH_TOKEN}}
