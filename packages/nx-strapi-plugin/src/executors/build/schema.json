@@ -1,9 +1,19 @@
 {
   "$schema": "http://json-schema.org/schema",
   "cli": "nx",
-  "title": "Build executor",
-  "description": "",
+  "title": "Builds the strapi admin app",
+  "description": "Builds the strapi admin app",
   "type": "object",
-  "properties": {},
+  "properties": {
+    "clean": {
+      "type": "boolean",
+      "description": "Remove the build and .cache folders",
+      "default": false
+    },
+    "noOptimization": {
+      "type": "boolean",
+      "description": "Build the Administration without assets optimization"
+    }
+  },
   "required": []
 }

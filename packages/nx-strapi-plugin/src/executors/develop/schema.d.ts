@@ -1,6 +1,7 @@
 import { JsonObject } from '@angular-devkit/core';
 
 export interface BuildExecutorSchema extends JsonObject {
-  clean?: boolean;
-  noOptimization?: boolean;
+  noBuild?: boolean;
+  watchAdmin?: boolean;
+  browser?: boolean;
 } // eslint-disable-line

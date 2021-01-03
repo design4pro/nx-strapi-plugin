@@ -5,7 +5,7 @@ import {
 } from '@nrwl/nx-plugin/testing';
 
 describe('Builds the strapi admin app', () => {
-  it('can run build', async (done) => {
+  it('can run develop', async (done) => {
     const plugin = uniq('nx-strapi-plugin');
 
     ensureNxProject(
@@ -16,8 +16,8 @@ describe('Builds the strapi admin app', () => {
       `generate @design4pro/nx-strapi-plugin:app ${plugin}`
     );
 
-    const result = await runNxCommandAsync(`build ${plugin}`);
-    expect(result.stdout).toContain('Strapi build done');
+    const result = await runNxCommandAsync(`develop ${plugin}`);
+    expect(result.stdout).toContain('Strapi develop done');
 
     done();
   });

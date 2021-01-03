@@ -3,10 +3,10 @@
   "name": "nx-strapi-plugin",
   "version": "0.0.1",
   "generators": {
-    "nx-strapi-plugin": {
-      "factory": "./src/generators/nx-strapi-plugin/generator",
-      "schema": "./src/generators/nx-strapi-plugin/schema.json",
-      "description": "nx-strapi-plugin generator"
+    "app": {
+      "factory": "./src/generators/app/generator",
+      "schema": "./src/generators/app/schema.json",
+      "description": "Create an Strapi application"
     }
   }
 }

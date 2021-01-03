@@ -1,7 +1,39 @@
 {
   "name": "@design4pro/nx-strapi-plugin",
   "version": "0.0.1",
+  "description": "Generate Strapi app with `nx g @design4pro/nx-strapi-plugin:app my-app-name`",
+  "license": "MIT",
+  "keywords": [
+    "nx",
+    "plugin",
+    "strapi"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/design4pro/nx-strapi-plugin.git"
+  },
+  "author": {
+    "name": "Rafał Wolak",
+    "email": "r.wolak@design4.pro",
+    "url": "https://www.design4.pro"
+  },
+  "bugs": {
+    "url": "https://github.com/design4pro/nx-strapi-plugin/issues/"
+  },
+  "homepage": "https://github.com/design4pro/nx-strapi-plugin#readme",
   "main": "src/index.js",
   "generators": "./generators.json",
-  "executors": "./executors.json"
+  "executors": "./executors.json",
+  "peerDependencies": {
+    "@nrwl/workspace": "*"
+  },
+  "devDependencies": {
+    "@angular-devkit/architect": "0.1100.5",
+    "@angular-devkit/core": "11.0.5",
+    "rxjs": "6.6.3",
+    "strapi": "3.4.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }

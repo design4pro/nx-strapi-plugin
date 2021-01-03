@@ -28,6 +28,8 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
+    "@angular-devkit/architect": "^0.1100.5",
+    "@angular-devkit/core": "^11.0.5",
     "@nrwl/cli": "11.0.20",
     "@nrwl/devkit": "11.0.20",
     "@nrwl/eslint-plugin-nx": "11.0.20",
@@ -44,6 +46,8 @@
     "eslint-config-prettier": "6.0.0",
     "jest": "26.2.2",
     "prettier": "2.1.2",
+    "rxjs": "^6.6.3",
+    "strapi": "^3.4.1",
     "ts-jest": "26.4.0",
     "ts-node": "~9.1.1",
     "tslib": "^2.0.0",
