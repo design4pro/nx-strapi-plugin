@@ -6,7 +6,7 @@ import { NxStrapiPluginGeneratorSchema } from './schema';
 
 jest.mock('strapi-generate-new');
 
-describe('nx-strapi generator', () => {
+describe('strapi generator', () => {
   let appTree: Tree;
   const options: NxStrapiPluginGeneratorSchema = { name: 'test' };
 

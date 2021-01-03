@@ -6,7 +6,7 @@
     "app": {
       "factory": "./src/generators/app/generator",
       "schema": "./src/generators/app/schema.json",
-      "description": "Create an Strapi application"
+      "description": "application schematic"
     }
   }
 }

@@ -9,16 +9,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/nx-strapi-plugin/**/*.ts"
-            ]
+            "lintFilePatterns": ["packages/nx-strapi-plugin/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/packages/nx-strapi-plugin"
-          ],
+          "outputs": ["coverage/packages/nx-strapi-plugin"],
           "options": {
             "jestConfig": "packages/nx-strapi-plugin/jest.config.js",
             "passWithNoTests": true
@@ -26,9 +22,7 @@
         },
         "build": {
           "executor": "@nrwl/node:package",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/packages/nx-strapi-plugin",
             "tsConfig": "packages/nx-strapi-plugin/tsconfig.lib.json",

@@ -7,14 +7,14 @@ import { fork } from 'child_process';
 import { join } from 'path';
 import { from, Observable } from 'rxjs';
 import { concatMap } from 'rxjs/operators';
-import { getRoot } from '../../utils/root';
+import { getProjectRoot } from '../../utils/get-project-root';
 import { BuildExecutorSchema } from './schema';
 
 export function runBuilder(
   options: BuildExecutorSchema,
   context: BuilderContext
 ): Observable<BuilderOutput> {
-  return from(getRoot(context)).pipe(
+  return from(getProjectRoot(context)).pipe(
     concatMap((projectRoot) => {
       return new Observable<BuilderOutput>((subscriber) => {
         runStrapiBuild(context.workspaceRoot, projectRoot, options)

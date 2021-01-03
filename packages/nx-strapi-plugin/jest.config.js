@@ -10,6 +10,5 @@ module.exports = {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/packages/nx-strapi-plugin',
-  testTimeout: 200000
+  coverageDirectory: '../../coverage/packages/nx-strapi-plugin'
 };

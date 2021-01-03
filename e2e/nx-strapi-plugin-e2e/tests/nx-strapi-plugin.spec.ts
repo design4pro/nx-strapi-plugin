@@ -4,6 +4,7 @@ import {
   runNxCommandAsync,
   uniq,
 } from '@nrwl/nx-plugin/testing';
+
 describe('nx-strapi-plugin e2e', () => {
   it('should create nx-strapi-plugin', async (done) => {
     const plugin = uniq('nx-strapi-plugin');

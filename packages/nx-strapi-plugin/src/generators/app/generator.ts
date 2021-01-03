@@ -1,3 +1,4 @@
+import { normalize } from '@angular-devkit/core';
 import {
   addProjectConfiguration,
   formatFiles,
@@ -24,7 +25,9 @@ function normalizeOptions(
     ? `${names(options.directory).fileName}/${name}`
     : name;
   const projectName = projectDirectory.replace(new RegExp('/', 'g'), '-');
-  const projectRoot = `${getWorkspaceLayout(host).appsDir}/${projectDirectory}`;
+  const projectRoot = normalize(
+    `${getWorkspaceLayout(host).appsDir}/${projectDirectory}`
+  );
   const parsedTags = options.tags
     ? options.tags.split(',').map((s) => s.trim())
     : [];
@@ -41,8 +44,9 @@ function normalizeOptions(
 export default async function (
   host: Tree,
   options: NxStrapiPluginGeneratorSchema
-) {
+): Promise<void> {
   const normalizedOptions = normalizeOptions(host, options);
+
   addProjectConfiguration(host, normalizedOptions.projectName, {
     root: normalizedOptions.projectRoot,
     projectType: 'application',
@@ -51,7 +55,7 @@ export default async function (
       build: {
         executor: '@design4pro/nx-strapi-plugin:build',
       },
-      develop: {
+      serve: {
         executor: '@design4pro/nx-strapi-plugin:develop',
       },
     },

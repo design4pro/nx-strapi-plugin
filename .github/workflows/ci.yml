@@ -15,7 +15,7 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                node: ['12', '11', '10', '8']
+                node: ['letest', '13', '12']
         steps:
             - name: Checkout
               uses: actions/checkout@v1
@@ -28,7 +28,7 @@ jobs:
             - name: Test
               run: |
                   npm install
-                  npm run test
+                  nx run-many --target=test --all
     release:
         name: Semantic Release
         needs: test
@@ -37,10 +37,10 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v1
 
-            - name: Set Node.js 12
+            - name: Set Node.js letest
               uses: actions/setup-node@v1
               with:
-                  node-version: 12
+                  node-version: letest
 
             - name: Release
               if: github.event_name == 'push' && github.ref == 'refs/heads/main'
