@@ -28,7 +28,7 @@ jobs:
             - name: Test
               run: |
                   npm install
-                  nx run-many --target=test --all
+                  npx nx run-many --target=test --all
     release:
         name: Semantic Release
         needs: test
