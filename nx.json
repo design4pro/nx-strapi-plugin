@@ -1,8 +1,5 @@
 {
   "npmScope": "design4pro",
-  "affected": {
-    "defaultBase": "main"
-  },
   "implicitDependencies": {
     "workspace.json": "*",
     "package.json": {
