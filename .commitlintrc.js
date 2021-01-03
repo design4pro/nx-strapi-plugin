@@ -26,7 +26,7 @@ module.exports = {
       'always',
       // prettier-ignore
       [
-        'package'
+        'nx-strapi-plugin'
       ],
     ],
   },
