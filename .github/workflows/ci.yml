@@ -15,7 +15,7 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                node: ['letest', '13', '12']
+                node: ['15', '14', '13', '12']
         steps:
             - name: Checkout
               uses: actions/checkout@v1
@@ -37,10 +37,10 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v1
 
-            - name: Set Node.js letest
+            - name: Set Node.js 13
               uses: actions/setup-node@v1
               with:
-                  node-version: letest
+                  node-version: 13
 
             - name: Release
               if: github.event_name == 'push' && github.ref == 'refs/heads/main'
