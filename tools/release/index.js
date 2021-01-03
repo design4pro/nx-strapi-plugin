@@ -27,8 +27,8 @@ const {
     projectRoot,
     buildOutput,
   }) {
-    projectRoot = projectRoot || `libs/${projectScope}`;
-    buildOutput = buildOutput || `dist/libs/${projectScope}`;
+    projectRoot = projectRoot || `pacakges/${projectScope}`;
+    buildOutput = buildOutput || `dist/pacakges/${projectScope}`;
   
     const relativeWorkspaceRoot = buildReversePath(projectRoot);
     const relativeBuildOutput = `${relativeWorkspaceRoot}/${buildOutput}`;
